@@ -42,3 +42,8 @@ Cypress.Commands.add('login', (email,password)=>{
 
     cy.contains('h2', 'Faça login').should('be.visible')
   })
+
+  Cypress.Commands.add('goTo', (route,title)=>{
+    cy.get(`nav a[href="${route}"]`).click()
+    cy.contains('h2', title).should('be.visible')
+  })
